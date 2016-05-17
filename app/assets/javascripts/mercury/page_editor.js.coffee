@@ -235,6 +235,8 @@ class @Mercury.PageEditor
       type: method
       dataType: @options.saveDataType
       data: data
+      beforeSend: () =>
+        Mercury.trigger('saving')
       success: (response) =>
         Mercury.changes = false
         Mercury.trigger('saved', response)
